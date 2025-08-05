@@ -1,4 +1,15 @@
-const search = async (city) => {
+import { useEffect, useRef, useState } from 'react';
+import SunIcon from '../assets/sun.png';
+import SearchIcon from '../assets/search.png';
+import LocationIcon from '../assets/location.png';
+import HumidityIcon from '../assets/humidity.png';
+import WindIcon from '../assets/wind.png';
+
+export default function Weather() {
+  const inputRef = useRef(null);
+  const [weatherData, setWeatherData] = useState(null);
+
+  const search = async (city) => {
     if (!city) {
       alert('Please enter a city name');
       return;
